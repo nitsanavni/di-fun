@@ -28,4 +28,12 @@ public class MainActivityTest {
         View view = activity.findViewById(R.id.aView);
         assertThat(view).isNotNull();
     }
+
+    @Test
+    public void onCreate_shouldConstructAController() {
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        MainActivityController controller = activity.getController();
+        assertThat(controller).isNotNull();
+    }
+
 }
