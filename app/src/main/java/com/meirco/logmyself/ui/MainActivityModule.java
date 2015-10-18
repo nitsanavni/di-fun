@@ -10,4 +10,10 @@ public class MainActivityModule {
             MainActivityControllerImpl impl) {
         return impl;
     }
+
+    @Provides
+    Dependency dependency() {
+        return new Dependency() {
+        };
+    }
 }

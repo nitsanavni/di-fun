@@ -34,6 +34,7 @@ public class MainActivityTest {
         MainActivity activity = Robolectric.setupActivity(MainActivity.class);
         MainActivityController controller = activity.getController();
         assertThat(controller).isNotNull();
+        assertThat(controller.getDependency()).isNotNull();
     }
 
 }
