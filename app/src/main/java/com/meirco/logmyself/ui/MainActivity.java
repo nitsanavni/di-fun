@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initDi() {
-        DaggerActivityComponent
+        DaggerMainActivityComponent
                 .builder()
-                .activityModule(new ActivityModule())
+                .mainActivityModule(new MainActivityModule())
                 .build()
                 .inject(this);
     }

@@ -4,9 +4,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ActivityModule {
+public class MainActivityModule {
     @Provides
-    MainActivityController mainActivityController(MainActivityControllerImpl impl) {
+    MainActivityController mainActivityController(
+            MainActivityControllerImpl impl) {
         return impl;
     }
 }
