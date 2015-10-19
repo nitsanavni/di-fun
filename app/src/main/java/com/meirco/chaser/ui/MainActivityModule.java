@@ -14,6 +14,10 @@ public class MainActivityModule {
     @Provides
     Dependency dependency() {
         return new Dependency() {
+            @Override
+            public String which() {
+                return "anonymous";
+            }
         };
     }
 }

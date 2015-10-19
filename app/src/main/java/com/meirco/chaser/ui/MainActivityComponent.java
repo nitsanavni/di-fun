@@ -7,4 +7,6 @@ public interface MainActivityComponent {
     void inject(MainActivity mainActivity);
 
     MainActivityController controller();
+
+    Dependency dependency();
 }
