@@ -1,10 +1,10 @@
-package com.meirco.logmyself.ui;
+package com.meirco.chaser.ui;
 
 import android.os.Build;
 import android.view.View;
 
-import com.meirco.logmyself.BuildConfig;
-import com.meirco.logmyself.R;
+import com.meirco.chaser.BuildConfig;
+import com.meirco.chaser.R;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

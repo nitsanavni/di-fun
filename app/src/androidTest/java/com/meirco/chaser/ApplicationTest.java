@@ -1,4 +1,4 @@
-package com.meirco.logmyself;
+package com.meirco.chaser;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

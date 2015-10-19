@@ -1,4 +1,4 @@
-package com.meirco.logmyself.ui;
+package com.meirco.chaser.ui;
 
 import javax.inject.Inject;
 

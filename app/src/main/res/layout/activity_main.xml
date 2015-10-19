@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.meirco.logmyself.ui.MainActivity">
+    tools:context="com.meirco.chaser.ui.MainActivity">
 
     <TextView
         android:id="@+id/aView"

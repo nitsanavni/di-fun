@@ -1,9 +1,9 @@
-package com.meirco.logmyself.ui;
+package com.meirco.chaser.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.meirco.logmyself.R;
+import com.meirco.chaser.R;
 
 import javax.inject.Inject;
 

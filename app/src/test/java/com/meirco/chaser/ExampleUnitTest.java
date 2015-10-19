@@ -1,4 +1,4 @@
-package com.meirco.logmyself;
+package com.meirco.chaser;
 
 import org.junit.Test;
 
