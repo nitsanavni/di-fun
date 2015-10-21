@@ -1,11 +1,13 @@
 package com.meirco.chaser.ui;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import dagger.Module;
 import dagger.Provides;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
 
 public class MainActivityControllerTest {
     @Test
@@ -40,12 +42,38 @@ public class MainActivityControllerTest {
         assertThat(dependency.which()).isEqualTo("impl");
     }
 
+    @Test
+    public void shouldUseMockDependency() {
+        Dependency mock = Mockito.mock(Dependency.class);
+        when(mock.which()).thenReturn("mock");
+        Dependency dependency = DaggerMainActivityComponent
+                .builder()
+                .mainActivityModule(new TestModule(mock))
+                .build()
+                .controller()
+                .getDependency();
+        assertThat(dependency).isNotNull();
+        assertThat(dependency.which()).isEqualTo("mock");
+    }
+
+
     @Module
     private class TestModule extends MainActivityModule {
+
+        private final Dependency dependency;
+
+        TestModule(Dependency dependency) {
+            this.dependency = dependency;
+        }
+
+        TestModule() {
+            this.dependency = new DependencyImpl();
+        }
+
         @Override
         @Provides
         Dependency dependency() {
-            return new DependencyImpl();
+            return this.dependency;
         }
     }
 
@@ -56,5 +84,5 @@ public class MainActivityControllerTest {
             return "impl";
         }
     }
-    
+
 }
