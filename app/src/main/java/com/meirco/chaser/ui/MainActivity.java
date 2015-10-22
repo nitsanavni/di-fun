@@ -10,6 +10,7 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
     @Inject
     MainActivityController mController;
+    private MainActivityModule module;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initDi() {
+        if (null == module) {
+            module = new MainActivityModule();
+        }
         DaggerMainActivityComponent
                 .builder()
-                .mainActivityModule(new MainActivityModule())
+                .mainActivityModule(module)
                 .build()
                 .inject(this);
     }
@@ -29,4 +33,9 @@ public class MainActivity extends AppCompatActivity {
     public MainActivityController getController() {
         return mController;
     }
+
+    public void setModule(MainActivityModule module) {
+        this.module = module;
+    }
+
 }
