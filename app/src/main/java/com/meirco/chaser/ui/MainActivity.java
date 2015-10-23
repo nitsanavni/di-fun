@@ -7,10 +7,13 @@ import com.meirco.chaser.R;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity
+        extends AppCompatActivity
+        implements HasComponent {
     @Inject
     MainActivityController mController;
-    private MainActivityModule module;
+    private MainActivityModule mModule;
+    private MainActivityComponent mComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initDi() {
-        if (null == module) {
-            module = new MainActivityModule();
+        if (null == mModule) {
+            mModule = new MainActivityModule();
         }
-        DaggerMainActivityComponent
+        mComponent = DaggerMainActivityComponent
                 .builder()
-                .mainActivityModule(module)
-                .build()
-                .inject(this);
+                .mainActivityModule(mModule)
+                .build();
+        mComponent.inject(this);
     }
 
     public MainActivityController getController() {
@@ -35,7 +38,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setModule(MainActivityModule module) {
-        this.module = module;
+        this.mModule = module;
     }
 
+    @Override
+    public Object getComponent() {
+        return mComponent;
+    }
 }
