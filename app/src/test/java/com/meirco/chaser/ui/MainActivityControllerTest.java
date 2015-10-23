@@ -7,6 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class MainActivityControllerTest {
@@ -85,4 +86,35 @@ public class MainActivityControllerTest {
         }
     }
 
+    @Test
+    public void shouldGetAChaserNetwork() {
+        MainActivityComponent component = DaggerMainActivityComponent.create();
+        MainActivityController controller = component.controller();
+        assertThat(controller.getNetwork()).isNotNull();
+    }
+
+    @Test
+    public void shouldAskNetworkForGroupGoal() {
+        ChaserNetwork mockNetwork = Mockito.mock(ChaserNetwork.class);
+        MainActivityComponent component = DaggerMainActivityComponent
+                .builder()
+                .mainActivityModule(new NetworkModule(mockNetwork))
+                .build();
+        component.controller().onCreate();
+        verify(mockNetwork).getGroupGoals();
+    }
+
+    @Module
+    private class NetworkModule extends MainActivityModule {
+        private final ChaserNetwork network;
+
+        NetworkModule(ChaserNetwork network) {
+            this.network = network;
+        }
+
+        @Provides
+        ChaserNetwork chaserNetwork(ChaserNetworkImpl impl) {
+            return network;
+        }
+    }
 }

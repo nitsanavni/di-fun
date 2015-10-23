@@ -20,6 +20,7 @@ import dagger.Module;
 import dagger.Provides;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.BDDMockito.given;
 
 @RunWith(RobolectricGradleTestRunner.class)
@@ -87,6 +88,12 @@ public class MainActivityTest {
         assertThat(goal).isNotNull();
     }
 
+    @Test
+    public void onCreate_shouldGetGoalDataFromServer() {
+        ActivityController<MainActivity> controller =
+                Robolectric.buildActivity(MainActivity.class).setup();
+        MainActivity activity = controller.get();
+        fail("not implemented yet");
+    }
+
 }
-
-

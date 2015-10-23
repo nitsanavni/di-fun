@@ -19,6 +19,7 @@ public class MainActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDi();
+        mController.onCreate();
         setContentView(R.layout.activity_main);
     }
 

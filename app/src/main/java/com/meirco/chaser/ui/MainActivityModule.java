@@ -20,4 +20,10 @@ public class MainActivityModule {
             }
         };
     }
+
+    @Provides
+    ChaserNetwork chaserNetwork(ChaserNetworkImpl impl) {
+        return impl;
+    }
+
 }
