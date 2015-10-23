@@ -12,7 +12,15 @@ public class GroupGoalView extends RelativeLayout {
 
     public GroupGoalView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        ((GroupGoalViewInjector) ((HasComponent) context).getComponent()).inject(this);
+        initDi(context);
+    }
+
+    private void initDi(Context context) {
+        getInjector((HasComponent) context).inject(this);
+    }
+
+    private GroupGoalViewInjector getInjector(HasComponent context) {
+        return (GroupGoalViewInjector) context.getComponent();
     }
 
     public GroupGoal getCurrentGoal() {
