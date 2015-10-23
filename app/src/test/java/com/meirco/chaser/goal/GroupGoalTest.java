@@ -5,7 +5,11 @@ import org.junit.Test;
 public class GroupGoalTest {
 
     @Test
-    public void shouldPass() {
+    public void shouldHaveGroupNumbers() {
+        GroupGoal goal = new GroupGoal();
+        goal.getNumberOfTotalWorkouts();
     }
+
+
 
 }
