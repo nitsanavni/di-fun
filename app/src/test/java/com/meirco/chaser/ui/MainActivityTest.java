@@ -77,6 +77,14 @@ public class MainActivityTest {
         assertThat(view).isInstanceOf(GroupGoalView.class);
     }
 
+    @Test
+    public void groupGoalViewShouldShowCurrentGoalStatus() {
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        GroupGoalView view = (GroupGoalView) activity.findViewById(R.id.group_goal_view);
+        GroupGoal goal = view.getCurrentGoal();
+        assertThat(goal).isNotNull();
+    }
+
 }
 
 

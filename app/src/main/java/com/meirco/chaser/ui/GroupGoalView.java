@@ -12,4 +12,8 @@ public class GroupGoalView extends RelativeLayout {
     public GroupGoalView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
+    public GroupGoal getCurrentGoal() {
+        return null;
+    }
 }
