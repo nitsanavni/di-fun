@@ -69,6 +69,14 @@ public class MainActivityTest {
             return this.dependency;
         }
     }
+
+    @Test
+    public void mainScreenShouldHaveAGroupGoalView() {
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        View view = activity.findViewById(R.id.group_goal_view);
+        assertThat(view).isInstanceOf(GroupGoalView.class);
+    }
+
 }
 
 
