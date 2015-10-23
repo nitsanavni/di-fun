@@ -8,8 +8,7 @@ public class GroupGoalTest {
     public void shouldHaveGroupNumbers() {
         GroupGoal goal = new GroupGoal();
         goal.getNumberOfTotalWorkouts();
+        goal.getNumberOfWorkoutsDone();
     }
-
-
 
 }
