@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 public class GroupGoalView extends RelativeLayout {
     @Inject
-    private GroupGoal goal;
+    GroupGoal goal;
 
     public GroupGoalView(Context context, AttributeSet attrs) {
         super(context, attrs);
