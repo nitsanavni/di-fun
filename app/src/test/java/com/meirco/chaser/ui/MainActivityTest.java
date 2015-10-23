@@ -5,6 +5,8 @@ import android.view.View;
 
 import com.meirco.chaser.BuildConfig;
 import com.meirco.chaser.R;
+import com.meirco.chaser.goal.GroupGoal;
+import com.meirco.chaser.goal.GroupGoalView;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

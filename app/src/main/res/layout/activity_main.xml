@@ -12,7 +12,7 @@
         android:text="hello world!"
         android:layout_height="wrap_content" />
 
-    <com.meirco.chaser.ui.GroupGoalView
+    <com.meirco.chaser.goal.GroupGoalView
         android:id="@+id/group_goal_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

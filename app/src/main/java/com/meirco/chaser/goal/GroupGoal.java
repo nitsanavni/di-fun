@@ -1,4 +1,4 @@
-package com.meirco.chaser.ui;
+package com.meirco.chaser.goal;
 
 import javax.inject.Inject;
 

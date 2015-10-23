@@ -1,5 +1,7 @@
 package com.meirco.chaser.ui;
 
+import com.meirco.chaser.goal.GroupGoalViewInjector;
+
 import dagger.Component;
 
 @Component(modules = MainActivityModule.class)

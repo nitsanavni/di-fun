@@ -1,8 +1,10 @@
-package com.meirco.chaser.ui;
+package com.meirco.chaser.goal;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
+
+import com.meirco.chaser.ui.HasComponent;
 
 import javax.inject.Inject;
 
