@@ -4,16 +4,17 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
+import javax.inject.Inject;
+
 public class GroupGoalView extends RelativeLayout {
-    public GroupGoalView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
+    @Inject
+    private GroupGoal goal;
 
     public GroupGoalView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
     public GroupGoal getCurrentGoal() {
-        return null;
+        return this.goal;
     }
 }
