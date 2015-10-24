@@ -13,7 +13,6 @@ public class MainActivityControllerImpl
     MainActivityControllerImpl() {
     }
 
-
     @Override
     public Dependency getDependency() {
         return dependency;

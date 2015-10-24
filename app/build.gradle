@@ -37,6 +37,9 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.0'
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
+    compile 'com.parse.bolts:bolts-android:1.2.0'
+    compile 'com.parse:parse-android:1.10.3'
+
     testCompile 'junit:junit:4.12'
     testCompile "org.robolectric:robolectric:3.0"
     testCompile 'org.assertj:assertj-core:1.7.0'
